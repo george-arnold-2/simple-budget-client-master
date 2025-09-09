@@ -1,0 +1,14 @@
+.Trash {
+  float: left;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  background-color: #87f38a;
+  margin-right: 5px;
+  box-shadow: 2px 2px;
+}
+
+.Transaction-Trash {
+  margin: 3px;
+  float: none;
+}

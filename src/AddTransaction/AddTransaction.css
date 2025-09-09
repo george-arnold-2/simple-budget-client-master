@@ -1,0 +1,38 @@
+.TransactionFormSection {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.CategorySelector {
+  width: 200px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid black;
+}
+
+.Transaction-Container {
+  flex-direction: column;
+}
+
+.Transaction-Icon {
+  position: absolute;
+  top: 500px;
+}
+
+.error {
+  position: relative;
+}
+.Transaction-Label {
+  margin-top: 20px;
+}
+.Transaction-Input {
+  font-size: 20px;
+  width: 30%;
+}
+
+@media only screen and (max-width: 380px) {
+  .Transaction-Icon {
+    position: absolute;
+    top: 500px;
+  }
+}

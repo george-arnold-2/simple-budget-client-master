@@ -1,0 +1,158 @@
+.Create-Account {
+    padding: 10px;
+    box-shadow: 3px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+    background-color: rgb(80, 175, 0);
+    margin: 0;
+}
+
+.Login-Forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.Landing-Page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Label {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    width: 75%;
+    text-align: left;
+}
+
+.Sign-Up-Input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: rgb(245, 244, 244);
+    margin: 10px;
+    width: 75%;
+    font-size: 20px;
+}
+
+.Sign-Up-Input:hover {
+    background-color: black;
+    color: white;
+}
+
+button {
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+}
+
+.Register {
+    text-decoration: underline;
+}
+
+.Register:hover {
+    text-decoration: solid;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.Submit {
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    width: 75%;
+    margin-left: 10 px;
+    background-color: #87f38a;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 2px 2px;
+    border-radius: 15px;
+}
+
+.Submit:hover {
+    cursor: pointer;
+}
+
+.Landing-Page-Section {
+    background-color: rgb(80, 175, 0);
+    font-weight: 600px;
+    width: 350px;
+    margin: 5px;
+    border-radius: 10px;
+    height: 275px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 10px;
+}
+
+.Info-Heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.Landing-Page-Info {
+    display: flex;
+    flex-direction: column;
+}
+
+.Landing-Page-Heading {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.Landing-Page-Icon {
+    width: 100px;
+}
+
+@media only screen and (min-width: 798px) {
+    .Landing-Page-Section {
+        width: 250px;
+    }
+
+    .Landing-Page-Info {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Flex-Container-1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .Flex-Container-2 {
+        display: flex;
+        align-items: center;
+    }
+
+    .Flex-Container-3 {
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .Landing-Page-Section {
+        width: 300px;
+    }
+
+    .Create-Account {
+        width: 300px;
+    }
+}

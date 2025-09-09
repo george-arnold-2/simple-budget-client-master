@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+.App {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.App-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Container {
+  display: flex;
+  justify-content: center;
+}
+
+.Particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.Link {
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #87f38a;
+  color: black;
+  text-decoration: none;
+}
+
+.Link:hover {
+  background-color: white;
+}
+
+.Heading-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Category-Transaction-Container {
+  display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .FormContainer {
+    width: 500px;
+  }
+  .Category-Transaction-Container {
+    display: flex;
+  }
+}
