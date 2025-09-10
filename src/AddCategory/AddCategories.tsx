@@ -19,12 +19,14 @@ const AddCategories: React.FC = () => {
       name: name,
     };
 
+    const token = TokenService.getAuthToken(); // Get the stored token
+
     if (category.name.length > 0) {
       fetch(`${config.API_ENDPOINT}/categories`, {
         method: 'POST',
         headers: {
-          'content-type': 'application/json',
-          Authorization: `basic ${TokenService.getAuthToken()}`,
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(category),
       })

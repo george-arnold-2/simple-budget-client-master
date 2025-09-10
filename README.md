@@ -6,14 +6,9 @@ Simple Budget
 
 ## Project-Live
 
-https://simple-budget.georgearnold88.now.sh/
-
-- Make sure to click "Use Demo Account"
-
 ## API
 
 The API, and more information about it, is located at
-https://github.com/george-arnold/simple-budget-api
 
 ## Screenshots
 

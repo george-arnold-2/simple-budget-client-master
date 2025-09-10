@@ -5,7 +5,7 @@ interface Config {
 }
 
 const config: Config = {
-  API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT,
+  API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT || 'https://web-production-a960.up.railway.app',
   API_KEY: process.env.REACT_APP_API_KEY,
   TOKEN_KEY: 'simple-budget-auth-token',
 };

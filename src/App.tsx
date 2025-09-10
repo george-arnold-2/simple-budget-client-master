@@ -10,6 +10,7 @@ import './App.css';
 import AddCategories from './AddCategory/AddCategories';
 import ParticleConfig from './ParticleConfig';
 import TokenService from './token-service';
+import config from './config';
 import { Transaction, Category } from './types';
 
 interface AppState {
@@ -18,6 +19,7 @@ interface AppState {
   categories: Category[];
   transactions: Transaction[];
   demo: boolean;
+  loading: boolean;
 }
 
 const App: React.FC = () => {
@@ -27,11 +29,68 @@ const App: React.FC = () => {
     categories: [],
     transactions: [],
     demo: false,
+    loading: true,
   });
 
   useEffect(() => {
-    //look at local storage, see if logged in, set signedIn=true,
-    // if idle log out
+    // Check if user is already logged in by looking at localStorage
+    const hasToken = TokenService.hasAuthToken();
+    if (hasToken) {
+      setState((prevState) => ({
+        ...prevState,
+        signedIn: true,
+        route: 'home',
+      }));
+
+      // Load user data from API
+      Promise.all([
+        fetch(`${config.API_ENDPOINT}/categories`, {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            authorization: `basic ${TokenService.getAuthToken()}`,
+          },
+        }),
+        fetch(`${config.API_ENDPOINT}/transactions`, {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            authorization: `basic ${TokenService.getAuthToken()}`,
+          },
+        }),
+      ])
+        .then(([categoriesRes, transactionsRes]) => {
+          if (!categoriesRes.ok) return categoriesRes.json().then((event) => Promise.reject(event));
+          if (!transactionsRes.ok) return transactionsRes.json().then((event) => Promise.reject(event));
+          return Promise.all([categoriesRes.json(), transactionsRes.json()]);
+        })
+        .then(([categoriesData, transactionsData]) => {
+          setState((prevState) => ({
+            ...prevState,
+            categories: categoriesData,
+            transactions: transactionsData,
+            loading: false,
+          }));
+        })
+        .catch((error) => {
+          console.error('Error loading user data:', error);
+          // If there's an error loading data, the token might be invalid
+          // Clear the token and redirect to signin
+          TokenService.clearAuthToken();
+          setState((prevState) => ({
+            ...prevState,
+            signedIn: false,
+            route: 'signup',
+            loading: false,
+          }));
+        });
+    } else {
+      // No token, set loading to false
+      setState((prevState) => ({
+        ...prevState,
+        loading: false,
+      }));
+    }
   }, []);
 
   const addTransaction = useCallback((transaction: Transaction) => {
@@ -122,7 +181,24 @@ const App: React.FC = () => {
       .reduce((a, b) => a + b, 0),
   };
 
-  const { signedIn, route } = state;
+  const { signedIn, route, loading } = state;
+
+  // Show loading indicator while checking authentication
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          fontSize: '18px',
+        }}
+      >
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <BudgetContext.Provider value={value}>

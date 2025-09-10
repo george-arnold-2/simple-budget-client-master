@@ -94,7 +94,8 @@ const Signin: React.FC<SigninProps> = ({ setDemo, loadUser, onRouteChange }) => 
     if (!validateForm(errors) || !(email && password)) {
       alert('Error: please complete the form' + errors.email + ' ' + errors.password);
     } else {
-      TokenService.saveAuthToken(TokenService.makeBasicAuthToken(email, password));
+      const token = TokenService.makeBasicAuthToken(email, password);
+      TokenService.saveAuthToken(token);
       const signIn = {
         email: email,
         password: password,
