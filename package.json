@@ -2,6 +2,7 @@
   "name": "simple-budget",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://garnold.github.io/simple-budget-client-master",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -37,7 +38,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "now ./build",
+    "deploy": "gh-pages -d build",
+    "deploy-now": "now ./build",
     "postdeploy": "now alias -A ./build/now.json",
     "prettier": "prettier --print-width 120 --single-quote --write src/**/*.js"
   },
@@ -57,6 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.8.3"
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "gh-pages": "^6.1.1"
   }
 }

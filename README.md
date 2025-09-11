@@ -4,7 +4,10 @@ A modern, TypeScript-based expense tracking application built with React 18. Thi
 
 ## 🚀 Live Demo
 
-The application is deployed and accessible at: [https://web-production-a960.up.railway.app](https://web-production-a960.up.railway.app)
+The application is deployed and accessible at:
+
+- **GitHub Pages**: [https://garnold.github.io/simple-budget-client-master](https://garnold.github.io/simple-budget-client-master)
+- **Railway**: [https://web-production-a960.up.railway.app](https://web-production-a960.up.railway.app)
 
 ## 📸 Screenshots
 
@@ -194,7 +197,29 @@ This creates an optimized production build in the `build` folder.
 
 ### Deployment
 
-The app is configured for deployment on Vercel/Now with the included deployment scripts.
+#### GitHub Pages (Automated CI/CD)
+
+The app is configured for automatic deployment to GitHub Pages using GitHub Actions:
+
+**Setup Instructions:**
+
+1. **Enable GitHub Pages** in repository settings:
+   - Go to Settings → Pages
+   - Source: "GitHub Actions"
+2. **Push to main/master branch** - Automatically triggers deployment
+3. **GitHub Actions workflow** - Builds, tests, and deploys the app
+4. **Live site** - Available at `https://garnold.github.io/simple-budget-client-master`
+
+**Manual deployment:**
+
+```bash
+npm run deploy
+```
+
+#### Other Deployment Options
+
+- **Vercel/Now**: `npm run deploy-now`
+- **Railway**: Configured for Railway deployment
 
 ## 🔄 Recent Updates
 
