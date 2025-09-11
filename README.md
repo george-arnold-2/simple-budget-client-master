@@ -48,7 +48,6 @@ Simple Budget is designed to help you track and analyze your spending patterns. 
 
 - **Email**: `demo@gmail.com`
 - **Password**: `password123456`
-- _Note: Demo data resets between sessions_
 
 ## 🛠️ Technology Stack
 
@@ -218,7 +217,6 @@ npm run deploy
 
 #### Other Deployment Options
 
-- **Vercel/Now**: `npm run deploy-now`
 - **Railway**: Configured for Railway deployment
 
 ## 🔄 Recent Updates
