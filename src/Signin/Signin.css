@@ -1,22 +1,55 @@
 .Create-Account {
-    padding: 10px;
-    box-shadow: 3px;
-    border-radius: 10px;
-    border: 1px solid black;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 325px;
-    background-color: rgb(80, 175, 0);
-    margin: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: slideInUp 0.3s ease-out;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .Login-Forms {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 0;
     width: 100%;
+    gap: 10px;
+}
+
+.Login-Forms label {
+    margin-top: 10px;
+}
+
+.Login-Forms .Submit {
+    margin-top: 20px;
+}
+
+.Landing-Page-Info {
+    padding: 0px 20px;
+    text-align: center;
 }
 
 .Landing-Page {
@@ -24,110 +57,198 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px 20px;
+    /* background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); */
 }
 
 .Label {
-    text-transform: uppercase;
-    color: white;
-    font-weight: bold;
-    width: 75%;
+    color: #2d3748;
+    font-weight: 600;
+    width: 100%;
     text-align: left;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
 }
 
 .Sign-Up-Input {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    background-color: rgb(245, 244, 244);
-    margin: 10px;
-    width: 75%;
-    font-size: 20px;
+    border: 2px solid #e2e8f0;
+    background-color: #ffffff;
+    margin: 0;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    animation: fadeInScale 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+.Sign-Up-Input:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.Sign-Up-Input:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.Sign-Up-Input:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .Sign-Up-Input:hover {
-    background-color: black;
-    color: white;
+    border-color: #48bb78;
+    background-color: #ffffff;
+    color: #2d3748;
+}
+
+.Sign-Up-Input:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
 }
 
 button {
-    padding: 10px;
-    font-family: 'Montserrat', sans-serif;
-    width: 50%;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .Register {
-    text-decoration: underline;
+    color: #48bb78;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
 }
 
 .Register:hover {
-    text-decoration: solid;
-    cursor: pointer;
+    color: #38a169;
+    text-decoration: underline;
 }
 
 .error {
-    color: red;
+    color: #e53e3e;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
 }
 
 .Submit {
-    padding: 5px;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    width: 75%;
-    margin-left: 10 px;
-    background-color: #87f38a;
-    margin-top: 20px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    text-transform: none;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
     text-align: center;
-    border: 1px solid black;
-    box-shadow: 2px 2px;
-    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: fadeInScale 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+.Submit:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+.Submit:nth-of-type(2) {
+    animation-delay: 0.25s;
 }
 
 .Submit:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
     cursor: pointer;
 }
 
 .Landing-Page-Section {
-    background-color: rgb(80, 175, 0);
-    font-weight: 600px;
-    width: 350px;
-    margin: 5px;
-    border-radius: 10px;
-    height: 275px;
-    padding: 10px;
-    border: 1px solid black;
-    box-shadow: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 16px;
+    min-height: 250px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.Landing-Page-Section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .Info-Heading {
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 32px;
+    width: 100%;
 }
 
 .Landing-Page-Info {
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    margin: 20px 0;
 }
 
 .Landing-Page-Heading {
-    text-decoration: underline;
-    font-weight: bolder;
+    color: #48bb78;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-decoration: none;
 }
 
 .Landing-Page-Icon {
-    width: 100px;
+    width: 80px;
+    height: 80px;
+    /* margin: 0 auto 16px; */
+    border-radius: 16px;
+    object-fit: cover;
 }
 
 @media only screen and (min-width: 798px) {
     .Landing-Page-Section {
-        width: 250px;
+        /* width: 250px; */
     }
 
     .Landing-Page-Info {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .Flex-Container-1 {
@@ -155,4 +276,8 @@ button {
     .Create-Account {
         width: 300px;
     }
+}
+
+.opacity-0 {
+    opacity: 0 !important;
 }

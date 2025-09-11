@@ -1,14 +1,32 @@
 .Trash {
-  float: left;
-  width: 20px;
-  height: 20px;
-  padding: 1px;
-  background-color: #87f38a;
-  margin-right: 5px;
-  box-shadow: 2px 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    border-radius: 8px;
+    margin-right: 8px;
+    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.Trash:hover {
+    background: linear-gradient(135deg, #c53030 0%, #9c2626 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.4);
 }
 
 .Transaction-Trash {
-  margin: 3px;
-  float: none;
+    margin: 0;
+    float: none;
+}
+
+.Font-Icon-Trash {
+    font-size: 14px;
+    color: white;
 }

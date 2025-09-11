@@ -4,11 +4,13 @@ export interface Transaction {
   amount: number;
   category_id?: number;
   categoryId?: number;
+  user_id?: string | number;
 }
 
 export interface Category {
   id: number;
   name: string;
+  user_id?: string | number;
 }
 
 export interface BudgetContextType {

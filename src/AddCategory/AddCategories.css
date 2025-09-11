@@ -1,70 +1,397 @@
+.Category-Page-Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .Form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
 }
+
 .Category-Form-Label {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2d3748;
+    font-weight: 600;
 }
+
 .FormContainer {
-  margin-bottom: 15px;
-  width: 350px;
-  text-align: right;
-  padding: 10px;
-  box-shadow: 3px;
-  border-radius: 10px;
-  border: 1px solid black;
-  background-color: rgb(80, 175, 0);
-  text-align: left;
-  display: flex;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding-top: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.Category-Header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* margin-bottom: 32px; */
+    /* padding-bottom: 20px; */
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0 24px 16px;
+
+}
+
+.Category-Icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.2);
+}
+
+.Category-Header-Text {
+    flex: 1;
+}
+
+.Category-Subtitle {
+    color: #718096;
+    font-size: 16px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.Form-Section {
+    background: rgba(255, 255, 255, 0.5);
+    /* padding: 24px; */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Form-Section-Title {
+    color: #2d3748;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #48bb78;
+}
+
+.Form-Row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.Form-Field {
+    display: flex;
+    flex-direction: column;
+}
+
+.Form-Actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.Submit-Secondary {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%) !important;
+    color: white !important;
+}
+
+.Submit-Secondary:hover {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
 }
 
 .FormTitle {
-  text-align: left;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 8px;
 }
 
 .Form-Input {
-  width: 50%;
-  font-size: 20px;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.Form-Input:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
 }
 
 input {
-  margin: 7px;
+    margin: 0;
 }
 
 .Submit-Category {
-  margin-top: 10px;
-  font-size: 16px;
+    margin-top: 0;
+    font-size: 16px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
 }
-.Text-On-Screens-Over-1024px {
-  display: none;
+
+.Submit-Category:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
 }
-@media only screen and (max-width: 380px) {
-  .FormContainer {
-    width: 300px;
-  }
+
+.Category-Sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
-@media only screen and (min-width: 1024px) {
-  .FormContainer {
-    width: 475px;
-  }
-  .Landing-Page-Icon {
-    width: 100px;
-    height: 100px;
-  }
-  .App-Icon {
-    position: absolute;
-    top: 300px;
-  }
-  .Category-Input {
+
+.Category-Stats {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.Category-Stats-Title {
+    color: #2d3748;
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 20px;
-  }
-  .Text-On-Screens-Over-1024px {
-    display: inline-block;
-  }
-  .Category-Container {
-    flex-wrap: wrap;
-  }
+    text-align: center;
+}
+
+.Stat-Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.Stat-Item:last-child {
+    border-bottom: none;
+}
+
+.Stat-Label {
+    color: #718096;
+    font-weight: 500;
+}
+
+.Stat-Value {
+    color: #48bb78;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.Category-List {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.Category-List-Title {
+    color: #2d3748;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Category-Items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Category-Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(72, 187, 120, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(72, 187, 120, 0.2);
+    transition: all 0.3s ease;
+}
+
+.Category-Item:hover {
+    background: rgba(72, 187, 120, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.2);
+}
+
+.Category-Info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.Category-Name {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Category-Transaction-Count {
+    color: #718096;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.Category-Amount {
+    color: #48bb78;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.No-Categories {
+    color: #718096;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.Category-Tips {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.Category-Tips-Title {
+    color: #2d3748;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.Tips-List {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Tips-List li {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.Tips-List li:before {
+    content: "•";
+    color: #48bb78;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.Tips-List li:last-child {
+    margin-bottom: 0;
+}
+
+.Text-On-Screens-Over-1024px {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.Text-On-Screens-Over-1024px h3 {
+    color: #48bb78;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.Text-On-Screens-Over-1024px p {
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .Category-Page-Container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .Form-Row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Category-Header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .Form-Actions {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .FormContainer {
+        /* width: 300px; */
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .FormContainer {
+        /* width: 475px; */
+    }
+
+    .Landing-Page-Icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .App-Icon {
+        position: absolute;
+        top: 300px;
+    }
+
+    .Category-Input {
+        margin-bottom: 20px;
+    }
+
+    .Text-On-Screens-Over-1024px {
+        display: inline-block;
+    }
+
+    .Category-Container {
+        flex-wrap: wrap;
+    }
 }

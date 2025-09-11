@@ -1,45 +1,101 @@
 .Navigation {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 16px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.Navigation .Button {
+    /* max-width: 300px; */
+    margin: 0 auto;
+}
+
+.Navigation-Links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+    .Navigation-Links {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .Navigation-Links {
+        flex-direction: row;
+    }
 }
 
 .Button {
-  background-color: #87f38a;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 1.2em;
-  width: 200px;
-  border: 1px solid black;
-  box-shadow: 2px 2px;
-  color: black;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-/* .Logout {
-  position: relative;
-} */
+.Button:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
+}
 
 .Logo {
-  width: 50px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 .Logo-Link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: black;
-  text-decoration: none;
-  font-weight: 900;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.Logo-Link:hover {
+    color: #48bb78;
+    transform: scale(1.05);
 }
 
 .Logout-Link {
-  color: black;
-  width: 100%;
-  height: 100%;
-  background-color: #87f38a;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .Logout-Link:active {
-  color: black;
+    color: white;
 }

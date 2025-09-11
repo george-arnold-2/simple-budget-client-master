@@ -14,11 +14,28 @@ const Navigation: React.FC<NavigationProps> = ({ signedIn, route, onRouteChange 
     return (
       <nav className="Navigation">
         <Logo />
-        <button onClick={() => onRouteChange('signout')} className="Button">
-          <Link className="Logout-Link" to="/">
-            Logout
-          </Link>
-        </button>
+        <div className="Navigation-Links">
+          <button onClick={() => onRouteChange('home')} className="Button">
+            <Link className="Logout-Link" to="/">
+              Add Transactions
+            </Link>
+          </button>
+          <button onClick={() => onRouteChange('categories')} className="Button">
+            <Link className="Logout-Link" to="/categories">
+              Manage Categories
+            </Link>
+          </button>
+          <button onClick={() => onRouteChange('track')} className="Button">
+            <Link className="Logout-Link" to="/track">
+              Spending Tracker
+            </Link>
+          </button>
+          <button onClick={() => onRouteChange('signout')} className="Button">
+            <Link className="Logout-Link" to="/">
+              Logout
+            </Link>
+          </button>
+        </div>
       </nav>
     );
   } else if (route === 'signup') {

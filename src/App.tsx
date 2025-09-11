@@ -5,10 +5,10 @@ import SpendingTracker from './SpendingTracker/SpendingTracker';
 import BudgetContext from './BudgetContext';
 import Signin from './Signin/Signin';
 import Register from './Signin/Register';
-import { Link } from 'react-router-dom';
 import './App.css';
 import AddCategories from './AddCategory/AddCategories';
-import ParticleConfig from './ParticleConfig';
+import InfoCards from './Signin/InfoCards';
+
 import TokenService from './token-service';
 import config from './config';
 import { Transaction, Category } from './types';
@@ -131,7 +131,8 @@ const App: React.FC = () => {
         categories: [],
       }));
       TokenService.clearAuthToken();
-    } else if (route === 'home') {
+      TokenService.clearUserId();
+    } else if (route === 'home' || route === 'categories' || route === 'track') {
       setState((prevState) => ({
         ...prevState,
         signedIn: true,
@@ -206,29 +207,31 @@ const App: React.FC = () => {
         <Navigation signedIn={signedIn} route={route} onRouteChange={onRouteChange} />
         {route === 'home' ? (
           <div className="App-Container">
-            <div className="Container">
-              <Link className="Link" to="/">
-                Add Expenses
-              </Link>
-              <Link className="Link" to="/track">
-                Spending Tracker
-              </Link>
+            <div className="Category-Transaction-Container">
+              <AddTransaction onRouteChange={onRouteChange} />
             </div>
+          </div>
+        ) : route === 'categories' ? (
+          <div className="App-Container">
             <div className="Category-Transaction-Container">
               <AddCategories />
-              <AddTransaction />
             </div>
-            <SpendingTracker />
+          </div>
+        ) : route === 'track' ? (
+          <div className="App-Container">
+            <div className="Category-Transaction-Container">
+              <SpendingTracker />
+            </div>
           </div>
         ) : route === 'signup' ? (
           <div>
-            <ParticleConfig />
             <Signin setDemo={setDemo} loadUser={() => {}} onRouteChange={onRouteChange} />
+            <InfoCards />
           </div>
         ) : (
           <div>
-            <ParticleConfig />
-            <Register loadUser={() => {}} onRouteChange={onRouteChange} />
+            <Register loadUser={() => {}} onRouteChange={onRouteChange} setDemo={setDemo} />
+            <InfoCards />
           </div>
         )}
       </main>
